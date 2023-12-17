@@ -72,7 +72,8 @@ const questions = [
       },
     ],
   },
-question: 'Quanto é 2 + 2?',
+  {
+    question: 'Quanto é 2 + 2?',
     answers: [
       {
         answer: '4',
@@ -135,26 +136,26 @@ question: 'Quanto é 2 + 2?',
     ],
   },
   {
-   question: 'Qual é a capital do Japão?',
-  answers: [
-    {
-      answer: 'Pequim',
-      correct: false,
-    },
-    {
-      answer: 'Tóquio',
-      correct: true,
-    },
-    {
-      answer: 'Seul',
-      correct: false,
-    },
-    {
-      answer: 'Bangkok',
-      correct: false,
-    },
-  ],
-}, // Adicione uma vírgula ao final desta chave para separá-la das outras perguntas
+    question: 'Qual é a capital do Japão?',
+    answers: [
+      {
+        answer: 'Pequim',
+        correct: false,
+      },
+      {
+        answer: 'Tóquio',
+        correct: true,
+      },
+      {
+        answer: 'Seul',
+        correct: false,
+      },
+      {
+        answer: 'Bangkok',
+        correct: false,
+      },
+    ],
+  }, 
 ];
 
 // substituição do quizz para a primeira pergunta
