@@ -72,6 +72,89 @@ const questions = [
       },
     ],
   },
+question: 'Quanto é 2 + 2?',
+    answers: [
+      {
+        answer: '4',
+        correct: true,
+      },
+      {
+        answer: '5',
+        correct: false,
+      },
+      {
+        answer: '6',
+        correct: false,
+      },
+      {
+        answer: '7',
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: 'Quem é conhecido como o "pai da computação"?',
+    answers: [
+      {
+        answer: 'Bill Gates',
+        correct: false,
+      },
+      {
+        answer: 'Alan Turing',
+        correct: true,
+      },
+      {
+        answer: 'Steve Jobs',
+        correct: false,
+      },
+      {
+        answer: 'Mark Zuckerberg',
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: 'Em que ano a World Wide Web foi criada?',
+    answers: [
+      {
+        answer: '1990',
+        correct: true,
+      },
+      {
+        answer: '2000',
+        correct: false,
+      },
+      {
+        answer: '1980',
+        correct: false,
+      },
+      {
+        answer: '2010',
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: 'Qual é a capital do Japão?',
+    answers: [
+      {
+        answer: 'Pequim',
+        correct: false,
+      },
+      {
+        answer: 'Tóquio',
+        correct: true,
+      },
+      {
+        answer: 'Seul',
+        correct: false,
+      },
+      {
+        answer: 'Bangkok',
+        correct: false,
+      },
+    ],
+  }, 
 ];
 
 // substituição do quizz para a primeira pergunta
