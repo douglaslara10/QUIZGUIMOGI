@@ -156,6 +156,69 @@ const questions = [
       },
     ],
   }, 
+{
+    question: 'Qual é a capital da França?',
+    answers: [
+      {
+        answer: 'Londres',
+        correct: false,
+      },
+      {
+        answer: 'Madrid',
+        correct: false,
+      },
+      {
+        answer: 'Paris',
+        correct: true,
+      },
+      {
+        answer: 'Berlim',
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: 'Quem escreveu "Dom Quixote"?',
+    answers: [
+      {
+        answer: 'William Shakespeare',
+        correct: false,
+      },
+      {
+        answer: 'Miguel de Cervantes',
+        correct: true,
+      },
+      {
+        answer: 'Leo Tolstoy',
+        correct: false,
+      },
+      {
+        answer: 'Jane Austen',
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: 'Em que ano a Revolução Francesa começou?',
+    answers: [
+      {
+        answer: '1776',
+        correct: false,
+      },
+      {
+        answer: '1789',
+        correct: true,
+      },
+      {
+        answer: '1801',
+        correct: false,
+      },
+      {
+        answer: '1825',
+        correct: false,
+      },
+    ],
+  },
 ];
 
 // substituição do quizz para a primeira pergunta
