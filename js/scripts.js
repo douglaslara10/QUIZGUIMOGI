@@ -10,22 +10,22 @@ let actualQuestion = 0;
 // perguntas
 const questions = [
   {
-    question: 'Se o Davi demora 60S para levar medidor, quantas sentadas na minha pica ele dar em 30S ?',
+    question: 'PHP foi desenvolvido para qual fim?',
     answers: [
       {
-        answer: '10',
+        answer: 'Back-End',
         correct: true,
       },
       {
-        answer: '20',
+        answer: 'Front-End',
         correct: false,
       },
       {
-        answer: '30',
+        answer: 'Sistema operacional',
         correct: false,
       },
       {
-        answer: '40',
+        answer: 'Banco de dados',
         correct: false,
       },
     ],
@@ -69,92 +69,10 @@ const questions = [
       {
         answer: '/',
         correct: false,
-
-        question: 'Quanto é 2 + 2?',
-    answers: [
-      {
-        answer: '4',
-        correct: true,
-      },
-      {
-        answer: '5',
-        correct: false,
-      },
-      {
-        answer: '6',
-        correct: false,
-      },
-      {
-        answer: '7',
-        correct: false,
       },
     ],
   },
-  {
-    question: 'Quem é conhecido como o "pai da computação"?',
-    answers: [
-      {
-        answer: 'Bill Gates',
-        correct: false,
-      },
-      {
-        answer: 'Alan Turing',
-        correct: true,
-      },
-      {
-        answer: 'Steve Jobs',
-        correct: false,
-      },
-      {
-        answer: 'Mark Zuckerberg',
-        correct: false,
-      },
-    ],
-  },
-  {
-    question: 'Em que ano a World Wide Web foi criada?',
-    answers: [
-      {
-        answer: '1990',
-        correct: true,
-      },
-      {
-        answer: '2000',
-        correct: false,
-      },
-      {
-        answer: '1980',
-        correct: false,
-      },
-      {
-        answer: '2010',
-        correct: false,
-      },
-    ],
-  },
-  {
-    question: 'Qual é a capital do Japão?',
-    answers: [
-      {
-        answer: 'Pequim',
-        correct: false,
-      },
-      {
-        answer: 'Tóquio',
-        correct: true,
-      },
-      {
-        answer: 'Seul',
-        correct: false,
-      },
-      {
-        answer: 'Bangkok',
-        correct: false,
-      },
-    ],
-  },
-  {
-    
+];
 
 // substituição do quizz para a primeira pergunta
 function init() {
