@@ -1,87 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!DOCTYPEhtml>
+<html lang="pt">
+  <cabeça>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="janela de visualização" content="largura=largura do dispositivo, escala inicial=1,0" />
     <title>Quizz Programação</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
+    <link rel="pré-conectar" href="https://fonts.gstatic.com" />
+    <ligação
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
+      rel="folha de estilo"
     />
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/scripts.js" defer></script>
-    <style>
-      /* Add a style block for additional styles */
-      body {
-        font-family: 'Nunito Sans', sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      header {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      header img {
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
+    <link rel="folha de estilo" href="css/styles.css" />
+    <script src="js/scripts.js" adiar></script>
   </head>
-  <body>
-    <div class="container">
-      <header>
-        <img src="https://www.guimaconseco.com.br/images/logo.png" alt="Guima Logo" />
-        <h1>Quiz Guima</h1>
+  <corpo>
+    <div class="contêiner">
+      <cabeçalho>
+        <h1>Quiz da Guima</h1>
       </header>
-      <main>
-        <!-- QUIZZ CONTAINER -->
+      <principal>
+        <!-- RECIPIENTE DE TESTE -->
         <div id="quizz-container">
-          <p id="question">
-            <span id="question-number">1</span> &#8212;
-            <span id="question-text">Qual é a unidade de medida para metros?</span>
+          <p id="pergunta">
+            <span id="número da pergunta">1</span> '#8212;
+            <span id="question-text">Qual é a unidade de medida para áreas metropolitanas?</span>
           </p>
-          <div id="answers-box">
-            <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
-            <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
-            <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
-            <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+          <div id="caixa de respostas">
+            <botão><span class="btn-letter"></span> <span class="pergunta-resposta"></span></button>
+            <botão><span class="btn-letter"></span> <span class="pergunta-resposta"></span></button>
+            <botão><span class="btn-letter"></span> <span class="pergunta-resposta"></span></button>
+            <botão><span class="btn-letter"></span> <span class="pergunta-resposta"></span></button>
           </div>
         </div>
 
-        <!-- SCORE BOARD -->
-        <div id="score-container" class="hide">
+        <!-- QUADRO DE PONTUAÇÃO -->
+        <div id="contêiner de pontuação" class="ocultar">
           <h2>Parabéns</h2>
-          <p id="display-score"><span>90</span>%</p>
+          <p id="pontuação de exibição"><span>90</span>%</p>
           <p>
             Você acertou <span id="correct-answers">0</span> de
-            <span id="questions-qty">10</span> perguntas
+            <span id="perguntas-qtd">10</span> perguntas
           </p>
-          <button id="restart">Refazer quizz!</button>
+          <button id="reiniciar">Refazer quizz!</button>
         </div>
 
-        <!-- TEMPLATE RESPOSTA -->
-        <button class="answer-template hide">
-          <span class="btn-letter"></span> <span class="question-answer"></span>
-        </button>
-      </main>
-      <footer>
+        <!-- MODELO RESPOSTA -->
+        <button class="ocultar modelo de resposta">
+          <span class="btn-letter"></span> <span class="pergunta-resposta"></span>
+        </botão>
+      </principal>
+      <rodapé>
         <p>
-          <strong>Copyright</strong> &copy; 2023
+          <strong>Direitos autorais</strong> &copiar; 2023
           <a href=""><strong>Douglas Lucas</strong></a> /
           <a href=""
             ><strong>Davi Nunes</strong></a
           >
         </p>
-      </footer>
+      </rodapé>
     </div>
-  </body>
+  </corpo>
 </html>
