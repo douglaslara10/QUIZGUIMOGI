@@ -1,62 +1,49 @@
-<!DOCTYPEhtml>
+<!DOCTYPE html>
 <html lang="pt">
-  <cabeça>
-    <meta charset="UTF-8" />
-    <meta name="janela de visualização" content="largura=largura do dispositivo, escala inicial=1,0" />
-    <title>Quizz Programação</title>
-    <link rel="pré-conectar" href="https://fonts.gstatic.com" />
-    <ligação
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap"
-      rel="folha de estilo"
-    />
-    <link rel="folha de estilo" href="css/styles.css" />
-    <script src="js/scripts.js" adiar></script>
-  </head>
-  <corpo>
-    <div class="contêiner">
-      <cabeçalho>
-        <h1>Quiz da Guima</h1>
-      </header>
-      <principal>
-        <!-- RECIPIENTE DE TESTE -->
-        <div id="quizz-container">
-          <p id="pergunta">
-            <span id="número da pergunta">1</span> '#8212;
-            <span id="question-text">Qual é a unidade de medida para áreas metropolitanas?</span>
-          </p>
-          <div id="caixa de respostas">
-            <botão><span class="btn-letter"></span> <span class="pergunta-resposta"></span></button>
-            <botão><span class="btn-letter"></span> <span class="pergunta-resposta"></span></button>
-            <botão><span class="btn-letter"></span> <span class="pergunta-resposta"></span></button>
-            <botão><span class="btn-letter"></span> <span class="pergunta-resposta"></span></button>
-          </div>
-        </div>
-
-        <!-- QUADRO DE PONTUAÇÃO -->
-        <div id="contêiner de pontuação" class="ocultar">
-          <h2>Parabéns</h2>
-          <p id="pontuação de exibição"><span>90</span>%</p>
-          <p>
-            Você acertou <span id="correct-answers">0</span> de
-            <span id="perguntas-qtd">10</span> perguntas
-          </p>
-          <button id="reiniciar">Refazer quizz!</button>
-        </div>
-
-        <!-- MODELO RESPOSTA -->
-        <button class="ocultar modelo de resposta">
-          <span class="btn-letter"></span> <span class="pergunta-resposta"></span>
-        </botão>
-      </principal>
-      <rodapé>
-        <p>
-          <strong>Direitos autorais</strong> &copiar; 2023
-          <a href=""><strong>Douglas Lucas</strong></a> /
-          <a href=""
-            ><strong>Davi Nunes</strong></a
-          >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quizz Programação</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/scripts.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Quiz da Guima</h1>
+    </header>
+    <main>
+      <div id="quizz-container">
+        <p id="pergunta">
+          <span id="question-number">1</span> &#8212;
+          <span id="question-text">Qual é a unidade de medida para áreas metropolitanas?</span>
         </p>
-      </rodapé>
-    </div>
-  </corpo>
+        <div id="answers-box">
+          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+        </div>
+      </div>
+      <div id="score-container" class="hide">
+        <h2>Parabéns</h2>
+        <p id="display-score"><span>90</span>%</p>
+        <p>
+          Você acertou <span id="correct-answers">0</span> de
+          <span id="questions-qty">10</span> perguntas
+        </p>
+        <button id="restart">Refazer quizz!</button>
+      </div>
+    </main>
+    <footer>
+      <p>
+        <strong>Direitos autorais</strong> &copy; 2023
+        <a href=""><strong>Douglas Lucas</strong></a> /
+        <a href=""><strong>Davi Nunes</strong></a>
+      </p>
+    </footer>
+  </div>
+</body>
 </html>
