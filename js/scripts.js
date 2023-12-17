@@ -10,22 +10,22 @@ let actualQuestion = 0;
 // perguntas
 const questions = [
   {
-    question: 'PHP foi desenvolvido para qual fim?',
+    question: 'Se o Davi demora 60S para levar medidor, quantas sentadas na minha pica ele dar em 30S ?',
     answers: [
       {
-        answer: 'Back-End',
+        answer: '10',
         correct: true,
       },
       {
-        answer: 'Front-End',
+        answer: '20',
         correct: false,
       },
       {
-        answer: 'Sistema operacional',
+        answer: '30',
         correct: false,
       },
       {
-        answer: 'Banco de dados',
+        answer: '40',
         correct: false,
       },
     ],
