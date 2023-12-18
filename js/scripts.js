@@ -1,4 +1,4 @@
-// declaração de variáveis
+// Declaração de variáveis
 const question = document.querySelector('#question');
 const answerBox = document.querySelector('#answers-box');
 const quizzContainer = document.querySelector('#quizz-container');
@@ -6,8 +6,14 @@ const scoreContainer = document.querySelector('#score-container');
 const letters = ['a', 'b', 'c', 'd', 'e'];
 let points = 0;
 let actualQuestion = 0;
+let timerInterval;
 
-// perguntas
+// Função para embaralhar as respostas
+function shuffleAnswers(answers) {
+  return answers.sort(() => Math.random() - 0.5);
+}
+
+// Perguntas
 const questions = [
   {
     question: 'PHP foi desenvolvido para qual fim?',
@@ -156,7 +162,7 @@ const questions = [
       },
     ],
   }, 
-{
+  {
     question: 'Qual é a capital da França?',
     answers: [
       {
@@ -221,30 +227,34 @@ const questions = [
   },
 ];
 
-// substituição do quizz para a primeira pergunta
+// Embaralhar as perguntas para obter 10 perguntas aleatórias
+const shuffledQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 10);
+
+// Função para iniciar o quizz
 function init() {
-  // criar primeira pergunta
+  // Criar primeira pergunta
   createQuestion(0);
 }
 
-// cria uma pergunta
+// Função para criar uma pergunta
 function createQuestion(i) {
-  // limpar questão anterior
+  // Limpar questão anterior
   const oldButtons = answerBox.querySelectorAll('button');
   oldButtons.forEach((btn) => {
     btn.remove();
   });
 
-  // alterar texto da pergunta
+  // Alterar texto da pergunta
   const questionText = question.querySelector('#question-text');
   const questionNumber = question.querySelector('#question-number');
 
-  questionText.textContent = questions[i].question;
+  questionText.textContent = shuffledQuestions[i].question;
   questionNumber.textContent = i + 1;
 
-  // inserir alternativas
-  questions[i].answers.forEach((answer, i) => {
-    // cria template botão quizz
+  // Inserir alternativas embaralhadas
+  const shuffledAnswers = shuffleAnswers(shuffledQuestions[i].answers);
+  shuffledAnswers.forEach((answer, i) => {
+    // Criar template botão quizz
     const answerTemplate = document.querySelector('.answer-template').cloneNode(true);
 
     const letterBtn = answerTemplate.querySelector('.btn-letter');
@@ -255,36 +265,55 @@ function createQuestion(i) {
 
     answerTemplate.setAttribute('correct-answer', answer['correct']);
 
-    // remover hide e template class
+    // Remover hide e template class
     answerTemplate.classList.remove('hide');
     answerTemplate.classList.remove('answer-template');
 
-    // inserir alternativa na tela
+    // Inserir alternativa na tela
     answerBox.appendChild(answerTemplate);
 
-    // inserir evento click no botão
+    // Inserir evento click no botão
     answerTemplate.addEventListener('click', function () {
       checkAnswer(this);
     });
   });
 
-  // incrementar o número da questão
-  actualQuestion++;
+  // Iniciar temporizador de 10 segundos
+  startTimer(10, function () {
+    // Se o temporizador chegar a zero, considerar a resposta como errada
+    checkAnswer(null);
+  });
 }
 
-// verificar resposta do usuário
+// Função para iniciar temporizador
+function startTimer(duration, callback) {
+  let timer = duration;
+  timerInterval = setInterval(function () {
+    timer--;
+
+    if (timer <= 0) {
+      clearInterval(timerInterval);
+      callback();
+    }
+  }, 1000);
+}
+
+// Função para verificar resposta do usuário
 function checkAnswer(btn) {
-  // seleciona todos os botões
+  // Limpar temporizador
+  clearInterval(timerInterval);
+
+  // Selecionar todos os botões
   const buttons = answerBox.querySelectorAll('button');
 
-  // verifica se resposta correta e add classe
+  // Verificar se resposta correta e adicionar classe
   buttons.forEach((button) => {
     if (button.getAttribute('correct-answer') == 'true') {
       button.classList.add('correct-answer');
 
-      // checa se usuário acertou a pergunta
+      // Checar se usuário acertou a pergunta
       if (btn === button) {
-        // incremento dos pontos
+        // Incrementar os pontos
         points++;
       }
     } else {
@@ -292,17 +321,17 @@ function checkAnswer(btn) {
     }
   });
 
-  // exibir próxima pergunta
+  // Exibir próxima pergunta
   nextQuestion();
 }
 
-// exibe a pŕoxima pergunta no quizz
+// Função para exibir a próxima pergunta no quizz
 function nextQuestion() {
-  // timer para usuário ver as respostas
+  // Timer para usuário ver as respostas
   setTimeout(function () {
-    // verifica se ainda há perguntas
-    if (actualQuestion >= questions.length) {
-      // apresenta mensagem de sucesso
+    // Verificar se ainda há perguntas
+    if (actualQuestion >= shuffledQuestions.length) {
+      // Apresentar mensagem de sucesso
       showSuccessMessage();
       return;
     }
@@ -311,41 +340,41 @@ function nextQuestion() {
   }, 1200);
 }
 
-// exibe a tela final
+// Função para exibir a tela final
 function showSuccessMessage() {
   hideOrShowQuizz();
 
-  // trocar dados tela de sucesso
-  // calcular score
-  const score = ((points / questions.length) * 100).toFixed(2);
+  // Trocar dados tela de sucesso
+  // Calcular score
+  const score = ((points / shuffledQuestions.length) * 100).toFixed(2);
 
   const displayScore = document.querySelector('#display-score span');
   displayScore.textContent = score.toString();
 
-  //alterar o número de perguntas corretas
+  // Alterar o número de perguntas corretas
   const correctAnswers = document.querySelector('#correct-answers');
   correctAnswers.textContent = points;
 
-  // alterar o total de perguntas
+  // Alterar o total de perguntas
   const totalQuestions = document.querySelector('#questions-qty');
-  totalQuestions.textContent = questions.length;
+  totalQuestions.textContent = shuffledQuestions.length;
 }
 
-// mostra ou esonde o score
+// Função para mostrar ou esconder o score
 function hideOrShowQuizz() {
   quizzContainer.classList.toggle('hide');
   scoreContainer.classList.toggle('hide');
 }
 
-// reiniciar quizz
+// Botão para reiniciar quizz
 const restartBtn = document.querySelector('#restart');
 restartBtn.addEventListener('click', function () {
-  //zerar jogo
+  // Zerar jogo
   actualQuestion = 0;
   points = 0;
   hideOrShowQuizz();
   init();
 });
 
-// inicialização do quizz
+// Inicialização do quizz
 init();
