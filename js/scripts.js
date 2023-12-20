@@ -1,4 +1,13 @@
-// declaração de variáveis
+// declaração de variáveis para o cadastro
+const cadastroForm = document.getElementById("cadastroForm");
+
+// adiciona evento ao botão de cadastro
+cadastroForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    cadastrar();
+});
+
+// declaração de variáveis para o quizz
 const question = document.querySelector('#question');
 const answerBox = document.querySelector('#answers-box');
 const quizzContainer = document.querySelector('#quizz-container');
@@ -72,6 +81,7 @@ const questions = [
       },
     ],
   },
+  // Adicione mais perguntas conforme necessário
 ];
 
 // substituição do quizz para a primeira pergunta
@@ -202,3 +212,14 @@ restartBtn.addEventListener('click', function () {
 
 // inicialização do quizz
 init();
+
+// Função do cadastro
+function cadastrar() {
+    var nome = document.getElementById("nome").value;
+    var sobrenome = document.getElementById("sobrenome").value;
+    var matricula = document.getElementById("matricula").value;
+
+    // Aqui você pode adicionar a lógica para processar os dados do cadastro, se necessário.
+    // Após o processamento, redirecionar para o index.html ou qualquer outra página desejada.
+    window.location.href = "index.html";
+}
