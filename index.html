@@ -15,6 +15,23 @@
             <h1>Quizz de Programação</h1>
         </header>
         <main>
+            <!-- CADASTRO FORMULÁRIO -->
+            <div id="cadastro-container">
+                <h2>Cadastro</h2>
+                <form id="cadastroForm">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required>
+                    
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input type="text" id="sobrenome" required>
+                    
+                    <label for="matricula">Matrícula:</label>
+                    <input type="text" id="matricula" required>
+                    
+                    <button type="button" onclick="cadastrar()">Cadastrar</button>
+                </form>
+            </div>
+
             <!-- QUIZZ CONTAINER -->
             <div id="quizz-container" class="hide">
                 <p id="question">
